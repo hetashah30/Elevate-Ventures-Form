@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Request Form</title>
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+  <div class="container">
+    
+    <div class="form-container">
+      <h1>Event Request Form</h1>
+      <form id="event-request-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Your Full Name" required />
+
+        <label for="email">Email-ID:</label>
+        <input type="email" id="email" placeholder="Your Email Address" required />
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" placeholder="Your Phone Number" required />
+
+        <label for="location">Location of Event:</label>
+        <input type="text" id="location" placeholder="Enter Event Location" required />
+
+        <label for="type">Type of Event:</label>
+        <select id="type" required>
+          <option value="" disabled selected>Select Event Type</option>
+          <option value="marriage">Marriage Function</option>
+          <option value="birthday">Birthday Party</option>
+          <option value="31st-party">31st Party</option>
+          <option value="pool-party">Pool Party</option>
+        </select>
+
+        <label for="budget">Budget of Event:</label>
+        <select id="budget" required>
+          <option value="" disabled selected>Select Budget</option>
+          <option value="under-10k">Under ₹10,000</option>
+          <option value="10k-50k">₹10,000 - ₹50,000</option>
+          <option value="50k-1l">₹50,000 - ₹1,00,000</option>
+          <option value="above-1l">Above ₹1,00,000</option>
+        </select>
+
+        <label for="theme">Theme (Optional):</label>
+        <input type="text" id="theme" placeholder="Enter Event Theme" />
+
+        <label for="attendees">Number of Attendees:</label>
+        <input type="number" id="attendees" placeholder="Enter Number of Attendees" required />
+
+        <label for="suggestions">Specific Suggestions (Optional):</label>
+        <textarea id="suggestions" rows="3" placeholder="Enter any specific suggestions"></textarea>
+
+        <div class="terms">
+            <input type="checkbox" id="terms" required />
+            <label for="terms">
+              I agree to the <a href="#">Terms and Conditions</a> and understand that submitting this form does not guarantee the booking of the event.
+            </label>
+          </div>
+          
+        <div class="buttons">
+          <button type="reset">Reset</button>
+          <button type="submit" id="place-request">Place Request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+    <script>
+        // Get the form element
+        const eventForm = document.getElementById('event-request-form');
+      
+        // Add a submit event listener to the form
+        eventForm.addEventListener('submit', (event) => {
+          // Prevent default form submission behavior
+          event.preventDefault();
+      
+          // Display the alert message
+          alert(
+            "Thank You for contacting Us!\n\n" +
+            "Your request will be approved in short time. " +
+            "We will contact you in 48 hours."
+          );
+      
+          // Reset the form after submission
+          eventForm.reset();
+        });
+      </script>
+      
+
+</body>
+</html>
